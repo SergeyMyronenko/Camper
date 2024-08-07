@@ -1,0 +1,22 @@
+.box {
+  display: flex;
+}
+
+.list {
+  display: flex;
+  gap: 4px;
+}
+
+.show {
+  border-radius: 200px;
+  padding: 16px 40px;
+  width: 166px;
+  height: 56px;
+  background-color: #e44848;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: -0.01em;
+  color: #fff;
+}

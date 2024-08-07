@@ -1,0 +1,68 @@
+.sidebar {
+  width: 488px;
+  padding: 0 64px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 488px;
+  gap: 10px;
+}
+
+.input {
+  border: none;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  width: 360px;
+  height: 56px;
+  padding: 0 18px 0 44px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 18px;
+  height: 20px;
+}
+
+.radioSvg {
+  width: 32px;
+  height: 32px;
+}
+
+.radioInput {
+  display: none;
+}
+
+.inputItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 112px;
+  height: 95px;
+  border-color: #f2f4f7;
+}
