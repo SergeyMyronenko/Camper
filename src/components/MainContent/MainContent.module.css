@@ -1,0 +1,9 @@
+.wrapper {
+  width: 888px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

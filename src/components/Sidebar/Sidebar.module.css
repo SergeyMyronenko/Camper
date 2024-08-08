@@ -1,5 +1,5 @@
 .sidebar {
-  width: 488px;
+  width: 360px;
   padding: 0 64px;
 }
 
@@ -16,13 +16,14 @@
 .box {
   display: flex;
   flex-wrap: wrap;
-  width: 488px;
+  width: 100%;
   gap: 10px;
 }
 
 .input {
+  box-sizing: border-box;
   border: none;
-  background-color: #f7f7f7;
+  background-color: var(--input);
   border-radius: 10px;
   width: 360px;
   height: 56px;
@@ -56,13 +57,30 @@
 }
 
 .inputItem {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 8px;
   border: 1px solid;
   border-radius: 10px;
   width: 112px;
   height: 95px;
-  border-color: #f2f4f7;
+  border-color: var(--features);
+  text-align: center;
+}
+
+.submit {
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 173px;
+  height: 56px;
+  background: var(--button);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: -0.01em;
+  color: var(--white);
 }

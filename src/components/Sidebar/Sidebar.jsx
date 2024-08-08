@@ -95,7 +95,7 @@ export const Sidebar = () => {
             <div className={css.box}>
               <div className={css.inputItem}>
                 <svg className={css.radioSvg}>
-                  <use href={`${sprite}icon-camper`}></use>
+                  <use href={`${sprite}#icon-camper`}></use>
                 </svg>
                 <Field
                   className={css.radioInput}
@@ -133,7 +133,9 @@ export const Sidebar = () => {
               </div>
             </div>
           </label>
-          <button type="submit">Search</button>
+          <button className={css.submit} type="submit">
+            Search
+          </button>
         </Form>
       </Formik>
     </aside>
