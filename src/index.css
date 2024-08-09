@@ -1,3 +1,7 @@
+@import url("./service/fonts.css");
+@import url("./service/root.css");
+@import "normalize.css/normalize.css";
+
 li {
   margin: 0;
   list-style-type: none;
@@ -28,19 +32,10 @@ button {
   border: none;
 }
 body {
+  max-width: 1440px;
+  padding: 100px 64px;
+  margin: 0 auto;
   font-family: var(--font-family);
   box-sizing: border-box;
   color: var(--main);
-}
-
-:root {
-  --font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-
-  --main: #101828;
-  --text: #475467;
-  --features: #f2f4f7;
-  --button: #e44848;
-  --white: #ffffff;
-  --input: #f7f7f7;
 }

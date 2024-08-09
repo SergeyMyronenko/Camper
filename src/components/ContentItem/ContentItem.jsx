@@ -1,8 +1,11 @@
 import css from "./ContentItem.module.css";
 import sprite from "../../images/sprite.svg";
-import { Details } from "../Details/Details";
+import { ModalCard } from "../ModalCard/ModalCard";
+import { useState } from "react";
 
 export const ContentItem = ({ content }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const {
     gallery,
     name,
@@ -11,15 +14,18 @@ export const ContentItem = ({ content }) => {
     description,
     rating,
     adults,
-    transmission,
-    engine,
     details,
+    reviews,
   } = content;
+
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
 
   return (
     <div className={css.wrapper}>
-      <div className={css.image}>
-        <img src={gallery[0]} alt="" />
+      <div className={css.imageBox}>
+        <img className={css.image} src={gallery[0]} alt="" />
       </div>
       <div className={css.infoBox}>
         <div className={css.boxPrice}>
@@ -36,11 +42,13 @@ export const ContentItem = ({ content }) => {
             <svg className={css.star}>
               <use href={`${sprite}#icon-star`}></use>
             </svg>
-            <p className={css.text}>{rating}(2Reviews)</p>
+            <p className={css.text}>
+              {rating}({reviews.length}Reviews)
+            </p>
             <svg className={css.star}>
               <use href={`${sprite}#icon-map-pin`}></use>
             </svg>
-            <p className={css.text}>{location}</p>
+            <p className={css.textLoc}>{location}</p>
           </div>
           <p className={css.description}>{description}</p>
           <ul className={css.list}>
@@ -48,7 +56,7 @@ export const ContentItem = ({ content }) => {
               <svg className={css.detailsIcon}>
                 <use href={`${sprite}#icon-people`}></use>
               </svg>
-              <p className={css.textDetails}>{details.adults}adults</p>
+              <p className={css.textDetails}>{adults} adults</p>
             </li>
             <li className={css.details}>
               <svg className={css.detailsIcon}>
@@ -72,7 +80,7 @@ export const ContentItem = ({ content }) => {
               <svg className={css.detailsIcon}>
                 <use href={`${sprite}#icon-bed`}></use>
               </svg>
-              <p className={css.textDetails}>{details.beds}beds</p>
+              <p className={css.textDetails}>{details.beds} beds</p>
             </li>
             <li className={css.details}>
               <svg className={css.detailsIcon}>
@@ -81,9 +89,12 @@ export const ContentItem = ({ content }) => {
               <p className={css.textDetails}>AC</p>
             </li>
           </ul>
-          <button className={css.show}>Show more</button>
+          <button className={css.show} onClick={handleOpenModal}>
+            Show more
+          </button>
         </div>
       </div>
+      {isOpen && <ModalCard item={content} />}
     </div>
   );
 };

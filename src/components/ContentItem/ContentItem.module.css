@@ -28,15 +28,26 @@
   line-height: 1.5em;
   letter-spacing: -0.01em;
   color: var(--white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.image {
+.show:hover,
+.show:focus {
+  background-color: #d84343;
+}
+
+.imageBox {
   width: 290px;
   height: 310px;
   display: flex;
   justify-content: center;
   overflow: hidden;
   border-radius: 10px;
+}
+
+.image {
+  width: 290px;
+  height: auto;
 }
 
 .wrapper {
@@ -46,6 +57,7 @@
   padding: 24px;
   width: 888px;
   gap: 24px;
+  box-sizing: border-box;
 }
 
 .name {
@@ -67,6 +79,7 @@
   font-size: 24px;
   line-height: 125%;
   color: var(--main);
+  margin-right: 10px;
 }
 
 .star {
@@ -84,6 +97,14 @@
   text-decoration-skip-ink: none;
   color: var(--main);
   margin-right: 16px;
+}
+
+.textLoc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--main);
 }
 
 .infoBox {

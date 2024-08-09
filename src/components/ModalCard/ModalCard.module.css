@@ -1,0 +1,72 @@
+.modal {
+  width: 982px;
+}
+.name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25em;
+  color: var(--main);
+}
+
+.box {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--main);
+  margin-right: 16px;
+}
+
+.textLoc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--main);
+}
+
+.description {
+  width: 525px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--text);
+}
+
+.imageList {
+  display: flex;
+  width: 902px;
+  height: 310px;
+}
+
+.image {
+  width: 290px;
+  height: auto;
+}
+
+.detailsList {
+  width: 430px;
+}
+
+.detailsItem {
+  display: flex;
+  justify-content: space-between;
+}

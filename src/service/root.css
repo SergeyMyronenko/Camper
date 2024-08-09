@@ -1,0 +1,12 @@
+:root {
+  --font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  --main: #101828;
+  --text: #475467;
+  --features: #f2f4f7;
+  --button: #e44848;
+  --white: #ffffff;
+  --input: #f7f7f7;
+}

@@ -11,13 +11,28 @@
 .label {
   display: flex;
   flex-direction: column;
+  margin-bottom: 8px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--text);
 }
 
-.box {
+.boxEquip {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   gap: 10px;
+  margin-bottom: 32px;
+}
+
+.boxType {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 64px;
 }
 
 .input {
@@ -35,8 +50,17 @@
   color: var(--main);
 }
 
+.input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+
 .inputWrapper {
   position: relative;
+  margin-bottom: 32px;
 }
 
 .icon {
@@ -69,6 +93,7 @@
   height: 95px;
   border-color: var(--features);
   text-align: center;
+  cursor: pointer;
 }
 
 .submit {
@@ -83,4 +108,38 @@
   line-height: 1.5em;
   letter-spacing: -0.01em;
   color: var(--white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit:hover,
+.submit:focus {
+  background-color: #d84343;
+}
+
+.title {
+  display: block;
+  height: 48px;
+  margin-top: 14px;
+  position: relative;
+  margin-bottom: 24px;
+  color: var(--main);
+}
+
+.title::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: var(--features);
+}
+
+.text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25em;
+  text-align: center;
+  color: var(--main);
 }

@@ -28,8 +28,8 @@ export const Sidebar = () => {
 
           <label className={css.label}>
             Filter
-            <h2>Vehicle equipment</h2>
-            <div className={css.box}>
+            <h2 className={css.title}>Vehicle equipment</h2>
+            <div className={css.boxEquip}>
               <div className={css.inputItem}>
                 <svg className={css.radioSvg}>
                   <use href={`${sprite}#icon-wind`}></use>
@@ -40,7 +40,7 @@ export const Sidebar = () => {
                   name="VehicleEquip"
                   value="ac"
                 />
-                <p>AC</p>
+                <p className={css.text}>AC</p>
               </div>
               <div className={css.inputItem}>
                 <svg className={css.radioSvg}>
@@ -52,7 +52,7 @@ export const Sidebar = () => {
                   name="VehicleEquip"
                   value="automatic"
                 />
-                <p>Automatic</p>
+                <p className={css.text}>Automatic</p>
               </div>
               <div className={css.inputItem}>
                 <svg className={css.radioSvg}>
@@ -64,7 +64,7 @@ export const Sidebar = () => {
                   name="VehicleEquip"
                   value="kitchen"
                 />
-                <p>Kitchen</p>
+                <p className={css.text}>Kitchen</p>
               </div>
               <div className={css.inputItem}>
                 <svg className={css.radioSvg}>
@@ -76,7 +76,7 @@ export const Sidebar = () => {
                   name="VehicleEquip"
                   value="tv"
                 />
-                <p>TV</p>
+                <p className={css.text}>TV</p>
               </div>
               <div className={css.inputItem}>
                 <svg className={css.radioSvg}>
@@ -88,11 +88,11 @@ export const Sidebar = () => {
                   name="VehicleEquip"
                   value="shower"
                 />
-                <p>Shower/WC</p>
+                <p className={css.text}>Shower/WC</p>
               </div>
             </div>
-            <h2>Vehicle type</h2>
-            <div className={css.box}>
+            <h2 className={css.title}>Vehicle type</h2>
+            <div className={css.boxType}>
               <div className={css.inputItem}>
                 <svg className={css.radioSvg}>
                   <use href={`${sprite}#icon-camper`}></use>
@@ -103,7 +103,7 @@ export const Sidebar = () => {
                   name="VehicleType"
                   value="van"
                 />
-                <p>Van</p>
+                <p className={css.text}>Van</p>
               </div>
 
               <div className={css.inputItem}>
@@ -116,7 +116,7 @@ export const Sidebar = () => {
                   name="VehicleType"
                   value="integrated"
                 />
-                <p>Fully Integrated</p>
+                <p className={css.text}>Fully Integrated</p>
               </div>
 
               <div className={css.inputItem}>
@@ -129,7 +129,7 @@ export const Sidebar = () => {
                   name="VehicleType"
                   value="alcove"
                 />
-                <p>Alcove</p>
+                <p className={css.text}>Alcove</p>
               </div>
             </div>
           </label>
