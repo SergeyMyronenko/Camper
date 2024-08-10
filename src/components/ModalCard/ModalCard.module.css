@@ -1,17 +1,39 @@
-.modal {
-  width: 982px;
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
 }
+
+.modal {
+  position: relative;
+  width: 982px;
+  padding: 40px;
+  background-color: var(--white);
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
 .name {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 24px;
   line-height: 1.25em;
   color: var(--main);
+  margin-bottom: 8px;
 }
 
 .box {
   display: flex;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .star {
@@ -20,7 +42,7 @@
   margin-right: 4px;
 }
 
-.text {
+.textStar {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
@@ -39,27 +61,45 @@
   color: var(--main);
 }
 
+.price {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.25em;
+  color: var(--main);
+  margin-bottom: 24px;
+}
+
 .description {
-  width: 525px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5em;
   color: var(--text);
+  margin-bottom: 44px;
 }
 
 .imageList {
   display: flex;
   width: 902px;
   height: 310px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .image {
   width: 290px;
-  height: auto;
+  height: 310px;
+}
+
+.galleryItem {
+  width: 290px;
+  height: 310px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: var(--white);
 }
 
 .detailsList {
@@ -69,4 +109,175 @@
 .detailsItem {
   display: flex;
   justify-content: space-between;
+}
+
+.close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 32px;
+  height: 32px;
+}
+
+.iconBox {
+  position: relative;
+  width: 400px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+
+.input {
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 18px 18px 18px 18px;
+  width: 100%;
+  height: 56px;
+  border: none;
+  background-color: var(--input);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25em;
+  color: var(--main);
+}
+
+.inputBox {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.inputComment {
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 18px 18px 18px 18px;
+  width: 400px;
+  height: 114px;
+  border: none;
+  background-color: var(--input);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25em;
+  color: var(--main);
+}
+
+.bottomContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.containerInfo {
+  width: 430px;
+}
+
+.form {
+  box-sizing: border-box;
+  padding: 24px;
+  width: 448px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+}
+
+.button {
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 160px;
+  height: 56px;
+  background: var(--button);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 24px;
+}
+
+.detailsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detailsItem {
+  border-radius: 100px;
+  padding: 12px 18px;
+  background: var(--features);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25em;
+  text-align: center;
+  color: var(--main);
+}
+
+.detailsInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33em;
+  text-align: center;
+  color: var(--main);
+}
+
+.scroll {
+  width: 926px;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.scroll::-webkit-scrollbar {
+  margin-left: 16px;
+  width: 8px;
+  border-radius: 7px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  max-height: 240px;
+  background: #d9d9d9;
+  border-radius: 7px;
+  background-clip: content-box;
+}
+
+.linkBox {
+  height: 48px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+  display: flex;
+  gap: 40px;
+  margin-bottom: 44px;
+}
+
+.link {
+  position: relative;
+  display: block;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2em;
+  color: var(--main);
+}
+
+.linkActive::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--button);
+  width: 100%;
+  height: 5px;
+  border-radius: 4px;
 }

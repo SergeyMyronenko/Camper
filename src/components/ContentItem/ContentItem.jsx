@@ -22,6 +22,10 @@ export const ContentItem = ({ content }) => {
     setIsOpen(true);
   };
 
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className={css.wrapper}>
       <div className={css.imageBox}>
@@ -94,7 +98,7 @@ export const ContentItem = ({ content }) => {
           </button>
         </div>
       </div>
-      {isOpen && <ModalCard item={content} />}
+      {isOpen && <ModalCard item={content} close={handleCloseModal} />}
     </div>
   );
 };

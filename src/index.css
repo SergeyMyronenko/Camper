@@ -36,6 +36,9 @@ body {
   padding: 100px 64px;
   margin: 0 auto;
   font-family: var(--font-family);
-  box-sizing: border-box;
   color: var(--main);
+}
+
+.modal-open {
+  overflow: hidden;
 }
