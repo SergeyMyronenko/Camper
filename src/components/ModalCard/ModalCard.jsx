@@ -1,31 +1,15 @@
+/* eslint-disable react/prop-types */
 import css from "./ModalCard.module.css";
 import sprite from "../../images/sprite.svg";
-import { Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { Link, Outlet } from "react-router-dom";
 
 export const ModalCard = ({ item, close }) => {
-  const [isActive, setIsActive] = useState(false);
-  const {
-    name,
-    rating,
-    reviews,
-    description,
-    gallery,
-    location,
-    details,
-    price,
-  } = item;
-  const carDetails = details;
-  const detailsList = Object.entries(carDetails).map(([key, value]) => {
-    if (value === 0 || value === "") {
-      return;
-    }
+  const [isActive, setIsActive] = useState("features");
+  const { name, rating, reviews, description, gallery, location, price } = item;
 
-    return `${key}: ${value}`;
-  });
-
-  const handleActivLink = (link) => {
+  const handleActiveLink = (link) => {
     setIsActive(link);
   };
 
@@ -69,121 +53,28 @@ export const ModalCard = ({ item, close }) => {
           </ul>
           <p className={css.description}>{description}</p>
           <div className={css.linkBox}>
-            <a
+            <Link
               className={clsx(
                 css.link,
                 isActive === "features" && css.linkActive
               )}
-              onClick={() => handleActivLink("features")}
-              href="#"
+              onClick={() => handleActiveLink("features")}
+              to="features"
             >
               Features
-            </a>
-            <a
+            </Link>
+            <Link
               className={clsx(
                 css.link,
                 isActive === "reviews" && css.linkActive
               )}
-              onClick={() => handleActivLink("reviews")}
-              href="#"
+              onClick={() => handleActiveLink("reviews")}
+              to="reviews"
             >
               Reviews
-            </a>
+            </Link>
           </div>
-          <div className={css.bottomContainer}>
-            <div className={css.containerInfo}>
-              <div>
-                <ul className={css.detailsList}>
-                  {detailsList.map((item, index) => {
-                    return (
-                      <li className={css.detailsItem} key={index}>
-                        {item}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div>
-                <h2>Vehicle details</h2>
-                <ul className={css.details}>
-                  <li className={css.detailsInfo}>
-                    <p className={css.text}>Form</p>
-                    <p className={css.text}>value</p>
-                  </li>
-                  <li className={css.detailsInfo}>
-                    <p className={css.text}>Length</p>
-                    <p className={css.text}>value</p>
-                  </li>
-                  <li className={css.detailsInfo}>
-                    <p className={css.text}>Width</p>
-                    <p className={css.text}>value</p>
-                  </li>
-                  <li className={css.detailsInfo}>
-                    <p className={css.text}>Height</p>
-                    <p className={css.text}>value</p>
-                  </li>
-                  <li className={css.detailsInfo}>
-                    <p className={css.text}>Tank</p>
-                    <p className={css.text}>value</p>
-                  </li>
-                  <li className={css.detailsInfo}>
-                    <p className={css.text}>Consumption</p>
-                    <p className={css.text}>value</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <Formik
-              initialValues={{
-                name: "",
-                email: "",
-                bookingDate: "",
-                comment: "",
-              }}
-            >
-              <Form className={css.form}>
-                <h2>Book your campervan now</h2>
-                <p>Stay connected! We are always ready to help you.</p>
-                <div className={css.inputBox}>
-                  <Field
-                    className={css.input}
-                    name="name"
-                    placeholder="Name"
-                    type="text"
-                  />
-                  <Field
-                    className={css.input}
-                    name="email"
-                    placeholder="Email"
-                    type="text"
-                  />
-                  <div className={css.iconBox}>
-                    <Field
-                      className={css.input}
-                      name="bookingDate"
-                      placeholder="Booking date"
-                      type="text"
-                    />
-                    <svg className={css.icon}>
-                      <use href={`${sprite}#icon-calendar`}></use>
-                    </svg>
-                  </div>
-
-                  <Field
-                    className={css.inputComment}
-                    name="comment"
-                    placeholder="Comment"
-                    type="text"
-                  />
-                </div>
-
-                <button className={css.button} type="submit">
-                  Send
-                </button>
-              </Form>
-            </Formik>
-          </div>
+          <Outlet />
         </div>
       </div>
     </div>

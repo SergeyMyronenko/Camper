@@ -22,7 +22,7 @@ export const MainContent = () => {
         {firstPage.map((item) => {
           return (
             <li key={item._id}>
-              <ContentItem content={item} />
+              <ContentItem content={item} id={item._id} />
             </li>
           );
         })}

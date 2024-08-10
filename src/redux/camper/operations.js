@@ -8,7 +8,6 @@ export const getAllCamp = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get("/catalog");
-      console.log(response.data);
 
       return response.data;
     } catch (error) {
@@ -21,8 +20,15 @@ export const currentCamp = createAsyncThunk(
   "camper/currentCamp",
   async (id, thunkAPI) => {
     try {
-      const response = await axios.get(`/catalog/${id}`);
-      return response.data;
+      const response = await axios.get("/catalog");
+
+      const currentCamp = response.data.find((item) => item._id === id);
+
+      if (!currentCamp) {
+        return;
+      }
+
+      return currentCamp;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

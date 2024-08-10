@@ -46,7 +46,7 @@
 }
 
 .image {
-  width: 290px;
+  /* width: 290px; */
   height: 310px;
 }
 
@@ -74,6 +74,13 @@
 .icon {
   width: 24px;
   height: 24px;
+  stroke: var(--main);
+  fill: none;
+}
+
+.iconActive {
+  fill: var(--button);
+  stroke: var(--button);
 }
 
 .price {

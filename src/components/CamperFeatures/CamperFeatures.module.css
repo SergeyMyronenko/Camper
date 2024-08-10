@@ -1,0 +1,58 @@
+.bottomContainer {
+  display: flex;
+  gap: 24px;
+  background-color: var(--white);
+}
+
+.containerInfo {
+  width: 430px;
+}
+
+.detailsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detailsItem {
+  border-radius: 100px;
+  padding: 12px 18px;
+  background: var(--features);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25em;
+  text-align: center;
+  color: var(--main);
+}
+
+.detailsInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33em;
+  text-align: center;
+  color: var(--main);
+  text-transform: capitalize;
+}
+
+.detailsBox {
+  margin-bottom: 44px;
+}
+
+.titleVehicle {
+  height: 48px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+  margin-bottom: 24px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

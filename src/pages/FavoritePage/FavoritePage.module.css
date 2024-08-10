@@ -1,0 +1,15 @@
+.wrapper {
+  padding: 20px;
+}
+
+.main {
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px solid var(--main);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
