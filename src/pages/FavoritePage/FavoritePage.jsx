@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAllCamper } from "../../redux/camper/selectors";
 import { getAllCamp } from "../../redux/camper/operations";
 import { ContentItem } from "../../components/ContentItem/ContentItem";
+import { Link } from "react-router-dom";
 
 export const FavoritePage = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,18 @@ export const FavoritePage = () => {
 
   return (
     <div className={css.wrapper}>
-      <h2>Favorites</h2>
+      <div className={css.linkBox}>
+        <h2 className={css.title}>Favorites</h2>
+        <div className={css.twoLink}>
+          <Link className={css.link} to="/catalog">
+            Catalog
+          </Link>
+          <Link className={css.link} to="/">
+            Home
+          </Link>
+        </div>
+      </div>
+
       <div className={css.main}>
         <ul className={css.list}>
           {selectedCamper.length > 0 ? (

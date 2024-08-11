@@ -4,6 +4,7 @@ import { selectAllCamper } from "../../redux/camper/selectors";
 import css from "./MainContent.module.css";
 import { LoadMore } from "../LoadMore/LoadMore";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const MainContent = () => {
   const [page, setPage] = useState(1);
@@ -18,6 +19,14 @@ export const MainContent = () => {
 
   return (
     <div className={css.wrapper}>
+      <div className={css.twoLink}>
+        <Link className={css.link} to="/favorites">
+          Favorites
+        </Link>
+        <Link className={css.link} to="/">
+          Home
+        </Link>
+      </div>
       <ul className={css.list}>
         {firstPage.map((item) => {
           return (

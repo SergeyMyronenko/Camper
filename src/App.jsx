@@ -14,7 +14,10 @@ function App() {
         <Route path="features" element={<CamperFeatures />} />
         <Route path="reviews" element={<CamperReviews />} />
       </Route>
-      <Route path="/favorites" element={<FavoritePage />} />
+      <Route path="/favorites" element={<FavoritePage />}>
+        <Route path="features" element={<CamperFeatures />} />
+        <Route path="reviews" element={<CamperReviews />} />
+      </Route>
     </Routes>
   );
 }

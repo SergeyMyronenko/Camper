@@ -16,7 +16,9 @@ export const ContentItem = ({ content, id }) => {
 
   useEffect(() => {
     let storage = JSON.parse(localStorage.getItem(CAMPER_KEY)) || [];
-  }, []);
+    const activeIcon = storage.includes(id);
+    setIsSelected(activeIcon);
+  }, [id]);
 
   const {
     gallery,
@@ -45,10 +47,10 @@ export const ContentItem = ({ content, id }) => {
     const findCopy = storage.includes(data._id);
 
     if (findCopy) {
-      return;
+      storage = storage.filter((itemId) => itemId !== data._id);
+    } else {
+      storage.push(data._id);
     }
-
-    storage.push(data._id);
 
     localStorage.setItem(CAMPER_KEY, JSON.stringify(storage));
 

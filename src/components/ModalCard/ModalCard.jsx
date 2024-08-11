@@ -3,26 +3,48 @@ import css from "./ModalCard.module.css";
 import sprite from "../../images/sprite.svg";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 export const ModalCard = ({ item, close }) => {
   const [isActive, setIsActive] = useState("features");
   const { name, rating, reviews, description, gallery, location, price } = item;
+
+  const pathLocation = useLocation();
 
   const handleActiveLink = (link) => {
     setIsActive(link);
   };
 
   useEffect(() => {
+    if (pathLocation.pathname.includes("features")) {
+      setIsActive("features");
+    } else {
+      setIsActive("reviews");
+    }
+
     document.body.classList.add("modal-open");
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.body.classList.remove("modal-open");
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
+  const handleKeyDown = (e) => {
+    if (e.code === "Escape") {
+      close();
+    }
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      close();
+    }
+  };
+
   return (
-    <div className={css.wrapper}>
+    <div className={css.wrapper} onClick={handleBackdropClick}>
       <div className={css.modal}>
         <p className={css.name}>{name}</p>
         <div className={css.box}>
