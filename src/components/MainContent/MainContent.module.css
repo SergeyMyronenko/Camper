@@ -33,8 +33,10 @@ link:focus {
 
 .twoLink {
   display: flex;
+  justify-content: space-between;
   gap: 12px;
   position: absolute;
   top: 24px;
   right: 60px;
+  width: 888px;
 }

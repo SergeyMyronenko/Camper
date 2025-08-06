@@ -1,17 +1,14 @@
-import { useSelector } from "react-redux";
 import { ContentItem } from "../ContentItem/ContentItem";
-import { selectAllCamper } from "../../redux/camper/selectors";
 import css from "./MainContent.module.css";
 import { LoadMore } from "../LoadMore/LoadMore";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const MainContent = () => {
+export const MainContent = ({ content }) => {
   const [page, setPage] = useState(1);
   const itemsPerPage = 4;
-  const allCamper = useSelector(selectAllCamper);
 
-  const firstPage = allCamper.slice(0, page * itemsPerPage);
+  const firstPage = content.slice(0, page * itemsPerPage);
 
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1);
@@ -20,12 +17,15 @@ export const MainContent = () => {
   return (
     <div className={css.wrapper}>
       <div className={css.twoLink}>
-        <Link className={css.link} to="/favorites">
-          Favorites
-        </Link>
-        <Link className={css.link} to="/">
-          Home
-        </Link>
+        <span>Find: {content.length} results </span>
+        <div>
+          <Link className={css.link} to="/favorites">
+            Favorites
+          </Link>
+          <Link className={css.link} to="/">
+            Home
+          </Link>
+        </div>
       </div>
       <ul className={css.list}>
         {firstPage.map((item) => {
@@ -36,7 +36,7 @@ export const MainContent = () => {
           );
         })}
       </ul>
-      {firstPage.length < allCamper.length && (
+      {firstPage.length < content.length && (
         <LoadMore onClick={handleLoadMore} />
       )}
     </div>
